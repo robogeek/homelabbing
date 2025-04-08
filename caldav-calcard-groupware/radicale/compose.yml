@@ -1,0 +1,15 @@
+
+services:
+  radicale:
+    restart: unless-stopped
+    volumes:
+      - ${RADICALE_HOME}/config/config:/etc/radicale/config
+      - ${RADICALE_HOME}/users:/etc/radicale/users
+      - ${RADICALE_HOME}/data:/var/lib/radicale
+    container_name: radicale
+    image: grepular/radicale
+    networks:
+      - servernet
+networks: 
+  servernet:
+    external: true

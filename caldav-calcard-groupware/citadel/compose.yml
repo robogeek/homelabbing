@@ -1,0 +1,17 @@
+services:
+  citadel:
+    restart: unless-stopped
+    volumes:
+      - ${CITADEL_HOME}/citadel:/usr/local/citadel
+      - ${CITADEL_HOME}/data:/usr/local/citadel/data
+      - ${CITADEL_HOME}/keys:/usr/local/citadel/keys
+      - ${CITADEL_HOME}/webcit:/usr/local/webcit
+      - ${CITADEL_HOME}/ctdlsupport:/usr/local/ctdlsupport
+    container_name: citadel
+    image: citadeldotorg/citadel
+    networks:
+      - servernet
+
+networks: 
+  servernet:
+    external: true

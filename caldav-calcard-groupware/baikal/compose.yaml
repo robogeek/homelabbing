@@ -1,0 +1,18 @@
+
+services:
+  baikal:
+    image: ckulka/baikal:nginx
+    restart: always
+    ports:
+      - 1888:80
+    volumes:
+      - config:/var/www/baikal/config
+      - data:/var/www/baikal/Specific
+    networks:
+      - servernet
+volumes:
+  config: 
+  data: 
+networks:
+  servernet:
+    external: true
