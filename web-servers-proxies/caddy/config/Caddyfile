@@ -5,7 +5,15 @@
 }
 
 # This is useful for testing.  It's useful to have a simple service
-# where we can easily verify a working configuration.  This posits
+# where we can easily verify a working configuration.  It simply
+# responds with the text shown here.
+
+# localhost {
+#	respond "Hello, world!"
+# }
+
+
+# This is useful for testing.  This posits
 # a simple NGINX service with default settings so we get
 # the default "Welcome" page. A suitable Compose file is described
 # in README.md

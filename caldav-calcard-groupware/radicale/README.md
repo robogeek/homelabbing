@@ -71,3 +71,11 @@ Instead, one simply uses a web browser to visit `https://dav.example.com`.  You'
 
 Using the GNOME Calendar application, I am able to see the calendar which was created, but am unable to add events to the calendar.  It seems the calendar is read-only.
 
+There is some verbiage in the documentation about access rights.  There is also a sample `config` file in the repository which explains a bit.  There is a `rights` file that can be installed, which gives fine-grained access control options.  But, it appears the default behavior is this:
+
+```
+[rights]
+type = owner_only
+```
+
+Which results in the behavior I describe above - GNOME Calendar treats it as read-only.
